@@ -1,2 +1,2 @@
 # BigData
-大数据基本使用，包括MapReduce、HDFS等的操作以及相关Demo实例。
+常见大数据技术基本使用，包括Hadoop、Spark、Hive、HBase、Flink等大数据技术。
