@@ -49,7 +49,7 @@ public class HDFSIO {
      *
      * @return org.apache.hadoop.fs.FileSystem
      */
-    private FileSystem getFileSystem() throws IOException {
+    public FileSystem getFileSystem() throws IOException {
         try {
             fileSystem = FileSystem.get(new URI(HDFS_PATH), conf, HDFS_USER);
         } catch (InterruptedException e) {

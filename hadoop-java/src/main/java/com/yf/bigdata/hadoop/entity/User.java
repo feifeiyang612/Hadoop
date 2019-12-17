@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @Author: YangFei
- * @Description:
+ * @Description:  用户实体
  * @create: 2019-12-13 10:49
  */
 @Data
