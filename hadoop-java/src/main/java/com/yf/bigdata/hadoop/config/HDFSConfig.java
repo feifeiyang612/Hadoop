@@ -31,7 +31,7 @@ public class HDFSConfig {
 
 
     @Bean
-    public HDFSIO getHbaseService() {
+    public HDFSIO getService() {
         org.apache.hadoop.conf.Configuration conf = new org.apache.hadoop.conf.Configuration();
         conf.set("fs.defaultFS", HDFS_PATH);
         conf.set("dfs.nameservices", dfs_nameservices);

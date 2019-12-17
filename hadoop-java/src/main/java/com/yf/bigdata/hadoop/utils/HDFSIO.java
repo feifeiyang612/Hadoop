@@ -122,6 +122,7 @@ public class HDFSIO {
             fileSystem = getFileSystem();
 
             fileSystem.copyFromLocalFile(delSrc, overwrite, localSrcPath, hdfsDstPath);
+            logger.info("上传文件成功！");
         } catch (IOException e) {
             logger.error(MessageFormat.format("上传文件至HDFS失败，srcFile:{0},dstPath:{1}", srcFile, dstPath), e);
         } finally {
@@ -362,7 +363,7 @@ public class HDFSIO {
         try {
             fileSystem = getFileSystem();
 
-            return fileSystem.delete(hdfsPath, true);
+            return fileSystem.delete(hdfsPath, false);
         } catch (IOException e) {
             logger.error(MessageFormat.format("删除HDFS文件或目录失败，path:{0}", path), e);
         } finally {

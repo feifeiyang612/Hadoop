@@ -48,10 +48,10 @@ public class TestHDFS {
     @Test
     public void testUploadFile() {
         //测试上传三个文件
-        hdfsio.uploadFileToHdfs("C:/Users/yangfei/Desktop/a.txt", "/testDir");
-        hdfsio.uploadFileToHdfs("C:/Users/yangfei/Desktop/b.txt", "/testDir");
+        hdfsio.uploadFileToHdfs("F:/KeyProjects/data/hadoop/hdfs/a.txt", "/testDir");
+        hdfsio.uploadFileToHdfs("F:/KeyProjects/data/hadoop/hdfs/b.txt", "/testDir");
 
-        hdfsio.uploadFileToHdfs("C:/Users/yangfei/Desktop/c.txt", "/testDir/subDir");
+        hdfsio.uploadFileToHdfs("F:/KeyProjects/data/hadoop/hdfs/c.txt", "/testDir/subDir");
     }
 
     /**
@@ -74,7 +74,7 @@ public class TestHDFS {
      */
     @Test
     public void testDownloadFile() {
-        hdfsio.downloadFileFromHdfs("/testDir/a.txt", "C:/Users/yangfei/Desktop/test.txt");
+        hdfsio.downloadFileFromHdfs("/testDir/a.txt", "F:/KeyProjects/data/hadoop/hdfs/test.txt");
     }
 
     /**
@@ -108,7 +108,6 @@ public class TestHDFS {
     @Test
     public void testRename() {
         hdfsio.rename("/testDir/b.txt", "/testDir/b_new.txt");
-
         //再次遍历
         testListFiles();
     }
@@ -132,9 +131,24 @@ public class TestHDFS {
         BlockLocation[] locations = hdfsio.getFileBlockLocations("/testDir/a.txt");
 
         if (locations != null && locations.length > 0) {
-            for (BlockLocation location : locations) {
-                System.out.println(location.getHosts()[0]);
+//            for (BlockLocation location : locations) {
+//                System.out.println(location.getHosts()[0]);
+//            }
+            for (BlockLocation blocklocation : locations) {
+                String[] hosts = blocklocation.getHosts();
+                for (String host : hosts) {
+                    System.out.println(host);//集群名
+                }
+                String[] names = blocklocation.getNames();
+                for (String name : names) {
+                    System.out.println(name);
+                }
+                String[] topo = blocklocation.getTopologyPaths();
+                for (String tp : topo) {
+                    System.out.println(tp);
+                }
             }
+
         }
     }
 }
