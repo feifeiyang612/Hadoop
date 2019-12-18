@@ -5,7 +5,14 @@
 
 # 文件说明：
 ### 一、ConfigurationFiles 
-  ConfigurationFiles文件中包含Hadoop、ZooKeeper、Kafka、Spark、Hive、HBase、Flink等的安装配置文件及其它说明；
+  ConfigurationFiles文件中包含以下大数据技术框架的配置文件和其它说明
+  #### Hadoop(2.8.5)
+  #### ZooKeeper(3.4.10)
+  #### Kafka(2.11-0.10.2.2)
+  #### Spark
+  #### Hive
+  #### HBase
+  #### Flink
 
 ### 二、Hadoop(版本：2.8.5)
   Hadoop示例工程中包括HDFS常用基本操作方法和MapReduce对wordcount单词统计
