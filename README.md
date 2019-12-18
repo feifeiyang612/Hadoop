@@ -1,13 +1,13 @@
 # BigData
-常见大数据技术基本使用，包括Hadoop、Kafka、Spark、Hive、HBase、Flink等大数据技术。
+常见大数据技术基本使用，包括Hadoop、ZooKeeper、Kafka、Spark、Hive、HBase、Flink等大数据技术。
 
 ### Wiki中包含常用技术整理！！！！
 
 # 文件说明：
 ### 一、ConfigurationFiles 
-  ConfigurationFiles文件中包含Hadoop、Kafka、Spark、Hive、HBase、Flink等的安装配置文件及其它说明；
+  ConfigurationFiles文件中包含Hadoop、ZooKeeper、Kafka、Spark、Hive、HBase、Flink等的安装配置文件及其它说明；
 
-### 二、Hadoop 
+### 二、Hadoop(版本：2.8.5)
   Hadoop示例工程中包括HDFS常用基本操作方法和MapReduce对wordcount单词统计
   HDFS操作：
   * 1、根据配置参数获取HDFS文件系统；
