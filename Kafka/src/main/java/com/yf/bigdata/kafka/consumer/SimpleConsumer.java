@@ -17,7 +17,7 @@ import java.text.MessageFormat;
 public class SimpleConsumer {
     private static final Logger logger = LoggerFactory.getLogger(SimpleProducer.class);
 
-    @KafkaListener(id = "test", topics = {"topic-test"})
+    @KafkaListener(id = "test", topics = {"myTopic"})
     public void listen(String data) {
         System.out.println("SimpleConsumer收到消息：" + data);
         logger.info(MessageFormat.format("SimpleConsumer收到消息：{0}", data));
