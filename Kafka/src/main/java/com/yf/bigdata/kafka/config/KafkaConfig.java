@@ -19,17 +19,23 @@ import java.util.Map;
 /**
  * @Author: YangFei
  * @Description: Kafka配置
+ * 1）、通过@Configuration、@EnableKafka，声明Config并且打开KafkaTemplate能力；
+ * 2）、通过@Value注入application.properties配置文件中的kafka配置；
+ * 3）、@Bean是一个方法级别上的注解，主要用在@Configuration注解的类里，也可以用在@Component注解的类里，
+ * 产生一个Bean对象，然后这个Bean对象交给Spring管理；
  * @create: 2019-12-20 23:30
  */
 @Configuration
 @EnableKafka
 public class KafkaConfig {
 
+    //生产者连接Server地址
     @Value("${kafka.producer.bootstrapServers}")
-    private String producerBootstrapServers; //生产者连接Server地址
+    private String producerBootstrapServers;
 
+    //生产者重试次数
     @Value("${kafka.producer.retries}")
-    private String producerRetries; //生产者重试次数
+    private String producerRetries;
 
     @Value("${kafka.producer.batchSize}")
     private String producerBatchSize;
@@ -65,7 +71,7 @@ public class KafkaConfig {
     /**
      * ProducerFactory
      *
-     * @return ProducerFactory
+     * @return DefaultKafkaProducerFactory
      */
     @Bean
     public ProducerFactory<Object, Object> producerFactory() {
@@ -85,7 +91,7 @@ public class KafkaConfig {
      * KafkaTemplate
      *
      * @param
-     * @return
+     * @return KafkaTemplate
      */
     @Bean
     public KafkaTemplate<Object, Object> kafkaTemplate() {
@@ -122,8 +128,10 @@ public class KafkaConfig {
     public KafkaListenerContainerFactory<?> batchContainerFactory() {
         ConcurrentKafkaListenerContainerFactory<Object, Object> containerFactory = new ConcurrentKafkaListenerContainerFactory<Object, Object>();
         containerFactory.setConsumerFactory(consumerFactory());
+         //设置并发量，小于或等于Topic的分区数
         containerFactory.setConcurrency(4);
-        containerFactory.setBatchListener(true); //批量消费
+        //设置为批量监听
+        containerFactory.setBatchListener(true);
         containerFactory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
 
         return containerFactory;

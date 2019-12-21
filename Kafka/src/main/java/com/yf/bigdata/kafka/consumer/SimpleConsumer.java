@@ -17,6 +17,7 @@ import java.text.MessageFormat;
 public class SimpleConsumer {
     private static final Logger logger = LoggerFactory.getLogger(SimpleProducer.class);
 
+    //id：消费者的id，当GroupId没有被配置的时候，默认id为GroupId
     @KafkaListener(id = "test", topics = {"myTopic"})
     public void listen(String data) {
         System.out.println("SimpleConsumer收到消息：" + data);

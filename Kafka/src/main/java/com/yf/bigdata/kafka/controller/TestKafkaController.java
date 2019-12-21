@@ -14,6 +14,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/kafka")
 public class TestKafkaController {
+
     @Resource(name = "simpleProducer")
     private SimpleProducer producer;
 
@@ -22,7 +23,6 @@ public class TestKafkaController {
     @RequestMapping("/send")
     public String send(String data) {
         producer.sendMessage(TOPIC, data);
-
         return "发送数据【" + data + "】成功！";
     }
 
