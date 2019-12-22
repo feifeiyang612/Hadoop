@@ -21,7 +21,7 @@ public class SimpleProducer {
     private KafkaTemplate<Object, Object> kafkaTemplate;
 
     /**
-     * 使用KafkaTemplate向Kafka推送数据
+     * 使用KafkaTemplate向Kafka推送数据，发送消息是String字符串
      *
      * @param topicName topic
      * @param data
@@ -33,8 +33,24 @@ public class SimpleProducer {
             kafkaTemplate.send(topicName, data);
             logger.info("推送数据成功！");
         } catch (Exception e) {
-            logger.error(MessageFormat.format("推送数据出错，topic:{0},data:{1}"
-                    , topicName, data));
+            logger.error(MessageFormat.format("推送数据出错，topic:{0},data:{1}", topicName, data));
+        }
+    }
+
+    /**
+     * 使用KafkaTemplate向Kafka推送数据，发送消息是Java对象
+     *
+     * @param topicName topic
+     * @param data
+     */
+    public void sendObjectMessage(String topicName, Object data) {
+        logger.info(MessageFormat.format("开始向Kafka推送数据：{0}", data));
+
+        try {
+            kafkaTemplate.send(topicName, data);
+            logger.info("推送数据成功！");
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("推送数据出错，topic:{0},data:{1}", topicName, data));
         }
     }
 

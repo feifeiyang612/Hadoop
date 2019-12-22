@@ -1,5 +1,6 @@
 package com.yf.bigdata.kafka.controller;
 
+import com.yf.bigdata.kafka.model.DemoObj;
 import com.yf.bigdata.kafka.producer.SimpleProducer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ public class TestKafkaController {
     private SimpleProducer producer;
 
     private final String TOPIC = "myTopic"; //测试使用topic
+    private final String TOPIC2 = "myTopic"; //测试使用topic
 
     @RequestMapping("/send")
     public String send(String data) {
@@ -26,4 +28,9 @@ public class TestKafkaController {
         return "发送数据【" + data + "】成功！";
     }
 
+    @RequestMapping("/send2")
+    public String send2(DemoObj demoObj) {
+        producer.sendObjectMessage(TOPIC2, demoObj);
+        return "发送数据【" + demoObj + "】成功！";
+    }
 }
