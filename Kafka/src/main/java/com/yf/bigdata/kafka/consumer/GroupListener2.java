@@ -17,13 +17,13 @@ import java.text.MessageFormat;
 public class GroupListener2 {
     private static final Logger logger = LoggerFactory.getLogger(GroupListener2.class);
 
-	@KafkaListener(topics={"myTopic"},groupId="group2")
-	public void listenTopic2(DemoObj data){
-		System.out.println("Group2收到消息：" + data);
-		logger.info(MessageFormat.format("Group2收到消息：{0}", data));
-	}
+//	@KafkaListener(topics={"myTopic-1"},groupId="group2")
+//	public void listenTopic2(DemoObj data){
+//		System.out.println("Group2收到消息：" + data);
+//		logger.info(MessageFormat.format("Group2收到消息：{0}", data));
+//	}
 
-//	@KafkaListener(topics={"topic-test2"},groupId="group2")
+//	@KafkaListener(topics={"yangtopic"},groupId="group2")
 //	public void listenTopic2_2(DemoObj data){
 //		System.out.println("Group2_2收到消息：" + data);
 //		logger.info(MessageFormat.format("Group2_2收到消息：{0}", data));

@@ -20,7 +20,7 @@ public class TestKafkaController {
     private SimpleProducer producer;
 
     private final String TOPIC = "myTopic"; //测试使用topic
-    private final String TOPIC2 = "myTopic"; //测试使用topic
+    private final String TOPIC2 = "myTopic-1"; //测试使用topic
 
     @RequestMapping("/send")
     public String send(String data) {

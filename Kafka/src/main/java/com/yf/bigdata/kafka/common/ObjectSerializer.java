@@ -8,6 +8,8 @@ import java.util.Map;
 /**
  * @Author: YangFei
  * @Description: 自定义消息编码器
+ * 需要注意的是，改变消息编码器和解码器之后需要清空Topic中原有消息或者使用新的Topic，
+ * 否则原来的字符串消息在反序列化时会出现异常，切记!!!
  * @create: 2019-12-22 17:51
  */
 public class ObjectSerializer implements Serializer<Object> {

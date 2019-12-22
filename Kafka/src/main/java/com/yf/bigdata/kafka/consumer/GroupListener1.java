@@ -18,11 +18,11 @@ import java.util.List;
 public class GroupListener1 {
     private static final Logger logger = LoggerFactory.getLogger(GroupListener1.class);
 
-    @KafkaListener(topics = {"myTopic"}, groupId = "group1")
-    public void listenTopic(DemoObj data) {
-        System.out.println("Group1收到消息：" + data);
-        logger.info(MessageFormat.format("Group1收到消息：{0}", data));
-    }
+//    @KafkaListener(topics = {"myTopic-1"}, groupId = "group1")
+//    public void listenTopic(DemoObj data) {
+//        System.out.println("Group1收到消息：" + data);
+//        logger.info(MessageFormat.format("Group1收到消息：{0}", data));
+//    }
 
     @KafkaListener(topics = {"myTopic"}, groupId = "group1", containerFactory = "batchContainerFactory")
     public void listenTopic1(List<String> data) {
