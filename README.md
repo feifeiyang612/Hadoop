@@ -37,4 +37,4 @@
   * 3、发送/接收自定义类型消息(例如可以是Java对象)，直接发送和接收Java对象，自定义消息编码器为ObjectSerializer，自定义消息解码器为ObjectDeserializer；\
   ***注意：改变消息编码器和解码器之后需要清空Topic中原有消息或者使用新的Topic，否则原来的字符串消息在反序列化时会出现异常，切记~~~***
   * 4、 多消费者组消费同一条消息；
-  * 5、批量消费消息，在@KafkaListener注解中设置containerFactory参数可以批量消费消息：
+  * 5、批量消费消息，在@KafkaListener注解中设置containerFactory参数可以批量消费消息。
