@@ -1,5 +1,5 @@
 # BigData
-常见大数据技术基本使用，包括Hadoop、ZooKeeper、Kafka、Spark、Hive、HBase、Flink等大数据技术。
+常见大数据技术基本使用，包括Hadoop、ZooKeeper、Kafka、Hive、Spark、HBase、Flink等大数据技术。
 
 ### Wiki中包含常用技术整理！！！！
 
@@ -9,8 +9,8 @@
   #### Hadoop(2.8.5)
   #### ZooKeeper(3.4.10)
   #### Kafka(2.11-0.10.2.2)
+  #### Hive(2.3.5)
   #### Spark
-  #### Hive
   #### HBase
   #### Flink
 
