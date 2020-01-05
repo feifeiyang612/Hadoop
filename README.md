@@ -1,11 +1,12 @@
 # BigData
 常见大数据技术基本使用，包括Hadoop、ZooKeeper、Kafka、Hive、Spark、HBase、Flink等大数据技术。
 
-### Wiki中包含常用技术整理！！！！
+### Wiki中包含常用技术知识点整理！！！！
 
 # 文件说明：
-### 一、ConfigurationFiles 
-  ConfigurationFiles文件中包含以下大数据技术框架的配置文件和其它说明
+### 一、各个文件
+  ConfigurationFiles文件中包含以下大数据技术框架的配置文件和其它说明\
+  data文件中包含各个实例工程测试过程中使用到的测试数据
   #### Hadoop(2.8.5)
   #### ZooKeeper(3.4.10)
   #### Kafka(2.11-0.10.2.2)
@@ -38,3 +39,9 @@
   ***注意：改变消息编码器和解码器之后需要清空Topic中原有消息或者使用新的Topic，否则原来的字符串消息在反序列化时会出现异常，切记~~~***
   * 4、 多消费者组消费同一条消息；
   * 5、批量消费消息，在@KafkaListener注解中设置containerFactory参数可以批量消费消息。
+
+### 四、Hive(版本：2.3.5)
+  Hive示例工程包括以下：
+  * 1、自定义函数(UDF)的使用；
+  * 2、通过jbeeline客户端远程使用Hive SQL；
+ 
