@@ -29,4 +29,5 @@ public class GroupListener1 {
         System.out.println("Group1收到消息：" + data);
         logger.info(MessageFormat.format("Group1收到消息：{0}", data));
     }
+
 }
