@@ -1,0 +1,42 @@
+syntax = "proto3";
+option java_package = "learn_grpc";
+
+service Service {
+  rpc SayHello (SayHelloRequest) returns (SayHelloReply) {
+  }
+  rpc GetServerPeopleList (GetServerPeopleListRequest) returns (stream GetServerPeopleListReply) {
+  }
+  rpc CountClientPeople (stream CountClientPeopleRequest) returns (CountClientPeopleReply) {
+  }
+  rpc Chat (stream ChatContent) returns (stream ChatContent) {
+  }
+}
+
+message SayHelloRequest {
+  string name = 1;
+  string helloWords = 2;
+}
+
+message SayHelloReply {
+  string reply = 1;
+}
+
+message GetServerPeopleListRequest {
+
+}
+
+message GetServerPeopleListReply {
+  string name = 1;
+}
+
+message CountClientPeopleRequest {
+
+}
+
+message CountClientPeopleReply {
+  int32 count = 1;
+}
+
+message ChatContent {
+  string content = 1;
+}
