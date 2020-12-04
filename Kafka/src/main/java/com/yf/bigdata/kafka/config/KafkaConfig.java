@@ -1,7 +1,5 @@
 package com.yf.bigdata.kafka.config;
 
-import com.yf.bigdata.kafka.common.ObjectDeserializer;
-import com.yf.bigdata.kafka.common.ObjectSerializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author: YangFei
@@ -23,11 +24,11 @@ public class FromCanalViaKakfaToRedis {
     RedisUtil redisUtil;
     private static final Logger logger = LoggerFactory.getLogger(GroupListener2.class);
 
-    @KafkaListener(topics = {"canaltopic"})
-    public void listenCanalTopic(List<String> data) {
-        System.out.println("Group1收到消息：" + data);
-        redisUtil.set("Canal_Kafka_Redis", data);
-        logger.info(MessageFormat.format("Canal收到消息：{0}", data));
-    }
+//    @KafkaListener(topics = {"canaltopic"})
+//    public void listenCanalTopic(List<String> data) {
+//        System.out.println("Group1收到消息：" + data);
+//        redisUtil.set("Canal_Kafka_Redis_" + Math.random()*100, data);
+//        logger.info(MessageFormat.format("Canal收到消息：{0}", data));
+//    }
 
 }
